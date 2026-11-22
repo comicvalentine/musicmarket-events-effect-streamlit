@@ -1,4 +1,4 @@
-"""이벤트 코호트 리텐션 대시보드 — 밑그림(blueprint).
+"""이벤트 효과 대시보드 — 밑그림(blueprint).
 
 마케팅 이벤트 하나를 고르면, 그 전후 스트리밍 지표를 세 가지 코호트 축으로 나눠
 "관심(일시적 반응)"과 "팬(남는 반응)"을 구분해본다. 모든 데이터는 합성(가상)이다.
@@ -23,7 +23,7 @@ import truth
 DB_PATH = Path(__file__).parent / "event_effect.sqlite"
 PRE_WINDOW = (-28, -1)   # 베이스라인으로 쓰는 이벤트 이전 구간
 
-st.set_page_config(page_title="이벤트 코호트 리텐션 (밑그림)", layout="wide")
+st.set_page_config(page_title="이벤트 효과 (밑그림)", layout="wide")
 
 
 @st.cache_resource
@@ -53,7 +53,7 @@ WHERE r.release_date >= (SELECT MIN(date) FROM fact_spotify_artist_daily)
 """
 events = pd.concat([run(MARKETING_SQL), run(RELEASE_SQL)], ignore_index=True).sort_values("date")
 
-st.title("이벤트 코호트 리텐션 대시보드")
+st.title("이벤트 효과 대시보드")
 st.caption("합성 데이터(가상 아티스트 11명). 실제 아티스트·수치와 무관합니다.")
 
 if "event_toast" in st.session_state:
