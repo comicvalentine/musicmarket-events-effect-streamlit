@@ -1,0 +1,289 @@
+track_id,release_id,artist_id,title,track_no,duration_sec,is_focus
+T0001,R001,A01,Amber Orbit,1,228,1
+T0002,R001,A01,Paper Motel,2,261,0
+T0003,R001,A01,Quiet Orbit,3,250,0
+T0004,R001,A01,Velvet Tide,4,168,0
+T0005,R001,A01,Salt Hour,5,250,0
+T0006,R001,A01,Slow Orbit,6,256,0
+T0007,R001,A01,Salt Window,7,223,0
+T0008,R001,A01,Hollow Tide,8,182,0
+T0009,R001,A01,Northern Hour,9,186,0
+T0010,R002,A01,Slow Tide,1,213,1
+T0011,R002,A01,Slow Avenue,2,166,0
+T0012,R002,A01,Faded Window,3,151,0
+T0013,R002,A01,Hollow Avenue,4,184,0
+T0014,R002,A01,Golden Motel,5,163,0
+T0015,R002,A01,Electric Motel Part II,6,250,0
+T0016,R003,A01,Slow Lantern (Live),1,202,1
+T0017,R003,A01,Northern Ferry,2,293,0
+T0018,R003,A01,Static Tide,3,237,0
+T0019,R003,A01,Northern Weather,4,155,0
+T0020,R003,A01,Paper Room,5,224,0
+T0021,R003,A01,Electric Comet,6,250,0
+T0022,R003,A01,Golden Island,7,190,0
+T0023,R003,A01,Electric Signal,8,227,0
+T0024,R003,A01,Faded Orbit,9,277,0
+T0025,R003,A01,Silver Hour (Live),10,189,0
+T0026,R004,A01,Electric Harbor (Live),1,173,1
+T0027,R005,A02,Paper Summer Reprise,1,291,0
+T0028,R005,A02,Velvet Window,2,248,1
+T0029,R005,A02,Paper Avenue,3,222,0
+T0030,R005,A02,Distant Summer (Live),4,176,0
+T0031,R005,A02,Faded Harbor (Interlude),5,162,0
+T0032,R005,A02,Lunar Engine Reprise,6,194,0
+T0033,R005,A02,Silver Lantern,7,285,0
+T0034,R005,A02,Static Ferry (Live),8,260,0
+T0035,R005,A02,Paper Island,9,163,0
+T0036,R005,A02,Lunar Tide,10,203,0
+T0037,R006,A02,Salt Tide Reprise,1,157,1
+T0038,R006,A02,Winter Ferry,2,187,0
+T0039,R007,A02,Velvet Island,1,196,0
+T0040,R007,A02,Golden Window,2,211,1
+T0041,R007,A02,Burning Motel,3,284,0
+T0042,R007,A02,Static Garden,4,269,0
+T0043,R007,A02,Northern Letter,5,289,0
+T0044,R007,A02,Paper Comet (Interlude),6,226,0
+T0045,R007,A02,Salt Island,7,279,0
+T0046,R007,A02,Distant Hour,8,280,0
+T0047,R007,A02,Paper Moon (Interlude),9,229,0
+T0048,R007,A02,Amber Window,10,237,0
+T0049,R008,A02,Paper Harbor,1,299,0
+T0050,R008,A02,Burning Moon,2,245,1
+T0051,R008,A02,Salt Summer,3,264,0
+T0052,R008,A02,Neon Island Reprise,4,264,0
+T0053,R008,A02,Neon Comet Part II,5,295,0
+T0054,R008,A02,Amber Harbor (Live),6,223,0
+T0055,R009,A03,Distant Letter,1,174,0
+T0056,R009,A03,Paper Tide,2,201,1
+T0057,R009,A03,Velvet Garden,3,282,0
+T0058,R009,A03,Neon Orbit,4,174,0
+T0059,R009,A03,Golden Comet,5,217,0
+T0060,R009,A03,Burning Signal,6,164,0
+T0061,R009,A03,Slow Engine,7,199,0
+T0062,R009,A03,Silver Ferry Reprise,8,280,0
+T0063,R009,A03,Silver Moon,9,297,0
+T0064,R009,A03,Velvet Avenue,10,247,0
+T0065,R009,A03,Amber Room (Live),11,252,0
+T0066,R009,A03,Silver Weather,12,261,0
+T0067,R010,A03,Faded Lantern,1,200,0
+T0068,R010,A03,Static Weather,2,192,0
+T0069,R010,A03,Electric Garden (Live),3,165,1
+T0070,R010,A03,Distant Weather Reprise,4,299,0
+T0071,R011,A03,Northern Garden,1,228,0
+T0072,R011,A03,Glass Tide Part II,2,267,1
+T0073,R011,A03,Glass Summer,3,294,0
+T0074,R011,A03,Paper Engine Part II,4,262,0
+T0075,R011,A03,Neon Comet,5,290,0
+T0076,R011,A03,Silver Signal Reprise,6,199,0
+T0077,R012,A03,Slow Moon,1,192,1
+T0078,R012,A03,Neon Tide,2,252,0
+T0079,R012,A03,Slow Hour,3,240,0
+T0080,R012,A03,Hollow Motel,4,262,0
+T0081,R012,A03,Velvet Moon (Live),5,257,0
+T0082,R012,A03,Silver Letter,6,192,0
+T0083,R012,A03,Slow Room (Interlude),7,233,0
+T0084,R012,A03,Glass Hour (Live),8,274,0
+T0085,R012,A03,Paper Engine,9,223,0
+T0086,R012,A03,Electric Room,10,281,0
+T0087,R012,A03,Northern Lantern,11,236,0
+T0088,R012,A03,Velvet Letter,12,271,0
+T0089,R013,A04,Quiet Island,1,169,1
+T0090,R013,A04,Lunar Engine (Live),2,261,0
+T0091,R013,A04,Slow Static,3,239,0
+T0092,R013,A04,Neon Summer,4,299,0
+T0093,R013,A04,Burning Tide Reprise,5,242,0
+T0094,R013,A04,Paper Garden,6,160,0
+T0095,R013,A04,Paper Hour,7,167,0
+T0096,R013,A04,Quiet Moon (Live),8,189,0
+T0097,R013,A04,Hollow Letter,9,220,0
+T0098,R013,A04,Silver Ferry,10,253,0
+T0099,R013,A04,Distant Weather,11,160,0
+T0100,R014,A04,Quiet Moon Reprise,1,259,0
+T0101,R014,A04,Burning Room,2,236,1
+T0102,R014,A04,Amber Ferry,3,190,0
+T0103,R014,A04,Golden Moon Part II,4,150,0
+T0104,R014,A04,Hollow Window Part II,5,194,0
+T0105,R014,A04,Hollow Comet,6,172,0
+T0106,R015,A04,Glass Island,1,161,1
+T0107,R015,A04,Paper Comet,2,243,0
+T0108,R015,A04,Burning Island (Interlude),3,281,0
+T0109,R015,A04,Glass Room,4,171,0
+T0110,R015,A04,Silver Hour,5,211,0
+T0111,R015,A04,Golden Summer,6,179,0
+T0112,R015,A04,Paper Moon,7,281,0
+T0113,R015,A04,Quiet Orbit (Live),8,157,0
+T0114,R015,A04,Velvet Motel,9,289,0
+T0115,R015,A04,Slow Motel,10,253,0
+T0116,R015,A04,Static Letter Part II,11,230,0
+T0117,R015,A04,Neon Room,12,218,0
+T0118,R016,A04,Neon Ferry,1,201,1
+T0119,R017,A05,Salt Moon,1,222,0
+T0120,R017,A05,Distant Comet,2,208,0
+T0121,R017,A05,Paper Weather,3,201,1
+T0122,R017,A05,Silver Window,4,297,0
+T0123,R017,A05,Distant Lantern Part II,5,154,0
+T0124,R017,A05,Neon Weather Reprise,6,241,0
+T0125,R017,A05,Northern Comet Reprise,7,166,0
+T0126,R017,A05,Quiet Ferry,8,253,0
+T0127,R017,A05,Slow Signal Reprise,9,216,0
+T0128,R017,A05,Velvet Comet,10,176,0
+T0129,R017,A05,Winter Comet,11,256,0
+T0130,R018,A05,Faded Summer,1,167,1
+T0131,R018,A05,Hollow Static Part II,2,299,0
+T0132,R018,A05,Burning Static Part II,3,160,0
+T0133,R018,A05,Golden Harbor,4,248,0
+T0134,R018,A05,Electric Weather,5,260,0
+T0135,R018,A05,Electric Tide,6,223,0
+T0136,R019,A05,Velvet Room Reprise,1,275,1
+T0137,R020,A05,Golden Orbit,1,196,0
+T0138,R020,A05,Lunar Lantern,2,298,0
+T0139,R020,A05,Lunar Summer,3,159,1
+T0140,R020,A05,Velvet Hour,4,215,0
+T0141,R020,A05,Golden Ferry,5,295,0
+T0142,R020,A05,Hollow Room,6,163,0
+T0143,R021,A05,Hollow Weather,1,258,1
+T0144,R021,A05,Velvet Weather,2,233,0
+T0145,R021,A05,Static Lantern,3,226,0
+T0146,R021,A05,Distant Island,4,246,0
+T0147,R021,A05,Golden Lantern (Interlude),5,272,0
+T0148,R021,A05,Northern Avenue Part II,6,219,0
+T0149,R021,A05,Paper Window (Interlude),7,223,0
+T0150,R021,A05,Electric Island Reprise,8,192,0
+T0151,R021,A05,Lunar Avenue,9,229,0
+T0152,R022,A06,Paper Orbit,1,179,0
+T0153,R022,A06,Lunar Window,2,249,0
+T0154,R022,A06,Velvet Room,3,158,1
+T0155,R022,A06,Velvet Signal,4,152,0
+T0156,R022,A06,Amber Hour,5,268,0
+T0157,R022,A06,Lunar Harbor,6,192,0
+T0158,R022,A06,Slow Garden (Interlude),7,271,0
+T0159,R022,A06,Faded Letter,8,231,0
+T0160,R022,A06,Paper Avenue Part II,9,251,0
+T0161,R022,A06,Northern Comet,10,171,0
+T0162,R022,A06,Amber Engine,11,249,0
+T0163,R022,A06,Quiet Static,12,264,0
+T0164,R023,A06,Neon Signal (Live),1,150,0
+T0165,R023,A06,Velvet Engine Part II,2,156,1
+T0166,R023,A06,Golden Garden (Live),3,252,0
+T0167,R023,A06,Lunar Garden (Interlude),4,196,0
+T0168,R024,A06,Winter Harbor,1,233,1
+T0169,R025,A06,Faded Static,1,252,1
+T0170,R025,A06,Neon Window,2,224,0
+T0171,R025,A06,Northern Harbor,3,281,0
+T0172,R025,A06,Burning Avenue Part II,4,212,0
+T0173,R025,A06,Static Hour,5,277,0
+T0174,R025,A06,Electric Letter,6,216,0
+T0175,R026,A07,Burning Motel Part II,1,152,1
+T0176,R026,A07,Silver Room,2,218,0
+T0177,R026,A07,Electric Harbor,3,300,0
+T0178,R026,A07,Static Window (Live),4,216,0
+T0179,R026,A07,Faded Room,5,177,0
+T0180,R026,A07,Velvet Static,6,285,0
+T0181,R026,A07,Faded Moon,7,260,0
+T0182,R026,A07,Amber Signal,8,246,0
+T0183,R026,A07,Winter Static,9,172,0
+T0184,R026,A07,Quiet Static Reprise,10,252,0
+T0185,R027,A07,Glass Signal,1,242,1
+T0186,R027,A07,Winter Moon,2,168,0
+T0187,R027,A07,Golden Garden,3,186,0
+T0188,R027,A07,Quiet Moon,4,290,0
+T0189,R028,A07,Electric Lantern (Live),1,268,1
+T0190,R029,A07,Electric Hour Part II,1,163,1
+T0191,R030,A08,Hollow Hour,1,185,0
+T0192,R030,A08,Salt Orbit,2,251,1
+T0193,R030,A08,Static Letter,3,224,0
+T0194,R030,A08,Northern Static,4,196,0
+T0195,R030,A08,Distant Letter Part II,5,156,0
+T0196,R030,A08,Faded Hour,6,215,0
+T0197,R030,A08,Glass Weather,7,210,0
+T0198,R030,A08,Burning Tide,8,157,0
+T0199,R030,A08,Distant Room,9,253,0
+T0200,R030,A08,Burning Orbit,10,300,0
+T0201,R030,A08,Hollow Static Reprise,11,273,0
+T0202,R030,A08,Lunar Static,12,250,0
+T0203,R031,A08,Distant Signal,1,170,0
+T0204,R031,A08,Neon Garden,2,283,1
+T0205,R031,A08,Slow Room Reprise,3,192,0
+T0206,R031,A08,Silver Lantern Part II,4,250,0
+T0207,R031,A08,Quiet Comet,5,218,0
+T0208,R031,A08,Quiet Garden,6,266,0
+T0209,R032,A08,Amber Avenue (Live),1,241,0
+T0210,R032,A08,Golden Signal,2,261,0
+T0211,R032,A08,Glass Tide,3,256,1
+T0212,R032,A08,Paper Hour Reprise,4,160,0
+T0213,R032,A08,Salt Static (Interlude),5,245,0
+T0214,R032,A08,Amber Harbor,6,244,0
+T0215,R033,A08,Salt Lantern,1,198,1
+T0216,R033,A08,Paper Summer,2,195,0
+T0217,R034,A09,Winter Window,1,259,0
+T0218,R034,A09,Silver Avenue,2,283,1
+T0219,R034,A09,Glass Comet,3,171,0
+T0220,R034,A09,Slow Weather,4,256,0
+T0221,R034,A09,Hollow Ferry,5,181,0
+T0222,R034,A09,Neon Ferry Reprise,6,207,0
+T0223,R034,A09,Golden Static,7,257,0
+T0224,R034,A09,Quiet Room,8,219,0
+T0225,R034,A09,Golden Hour,9,213,0
+T0226,R034,A09,Lunar Ferry,10,236,0
+T0227,R034,A09,Golden Avenue (Interlude),11,273,0
+T0228,R034,A09,Northern Engine,12,183,0
+T0229,R035,A09,Golden Moon,1,260,1
+T0230,R035,A09,Hollow Summer,2,231,0
+T0231,R036,A09,Burning Garden,1,264,0
+T0232,R036,A09,Velvet Signal (Interlude),2,249,1
+T0233,R036,A09,Winter Room,3,196,0
+T0234,R036,A09,Quiet Avenue Reprise,4,247,0
+T0235,R037,A09,Quiet Moon Part II,1,168,0
+T0236,R037,A09,Golden Room,2,283,1
+T0237,R037,A09,Paper Harbor Reprise,3,246,0
+T0238,R037,A09,Paper Signal,4,181,0
+T0239,R037,A09,Slow Engine Reprise,5,254,0
+T0240,R037,A09,Static Motel,6,289,0
+T0241,R038,A10,Paper Garden (Live),1,250,1
+T0242,R038,A10,Faded Avenue (Interlude),2,154,0
+T0243,R038,A10,Amber Letter,3,284,0
+T0244,R038,A10,Glass Letter,4,193,0
+T0245,R038,A10,Distant Moon,5,208,0
+T0246,R038,A10,Paper Window,6,256,0
+T0247,R038,A10,Paper Lantern,7,177,0
+T0248,R038,A10,Winter Garden,8,209,0
+T0249,R038,A10,Silver Lantern (Interlude),9,260,0
+T0250,R038,A10,Burning Hour,10,166,0
+T0251,R038,A10,Static Motel Reprise,11,213,0
+T0252,R039,A10,Silver Island,1,254,1
+T0253,R040,A10,Slow Garden,1,199,1
+T0254,R040,A10,Static Signal,2,179,0
+T0255,R041,A10,Electric Moon,1,286,1
+T0256,R041,A10,Northern Avenue,2,258,0
+T0257,R041,A10,Burning Letter,3,272,0
+T0258,R041,A10,Winter Harbor Part II,4,215,0
+T0259,R041,A10,Slow Lantern,5,251,0
+T0260,R041,A10,Burning Hour Part II,6,165,0
+T0261,R041,A10,Electric Motel,7,263,0
+T0262,R041,A10,Electric Lantern,8,283,0
+T0263,R041,A10,Quiet Engine,9,297,0
+T0264,R041,A10,Amber Summer (Interlude),10,203,0
+T0265,R041,A10,Velvet Lantern Part II,11,208,0
+T0266,R041,A10,Hollow Signal Part II,12,270,0
+T0267,R042,A11,Salt Tide,1,363,0
+T0268,R042,A11,Winter Signal (Interlude),2,502,0
+T0269,R042,A11,Faded Window Part II,3,320,1
+T0270,R042,A11,Paper Static (Live),4,285,0
+T0271,R042,A11,Silver Motel,5,360,0
+T0272,R042,A11,Static Comet,6,333,0
+T0273,R042,A11,Slow Island,7,359,0
+T0274,R042,A11,Northern Orbit,8,399,0
+T0275,R042,A11,Amber Window (Live),9,379,0
+T0276,R042,A11,Burning Avenue,10,516,0
+T0277,R042,A11,Winter Motel,11,477,0
+T0278,R042,A11,Burning Weather Part II,12,317,0
+T0279,R043,A11,Salt Tide (Interlude),1,439,1
+T0280,R043,A11,Silver Signal,2,336,0
+T0281,R044,A11,Neon Motel,1,534,1
+T0282,R044,A11,Neon Moon,2,524,0
+T0283,R045,A11,Velvet Avenue Part II,1,288,1
+T0284,R045,A11,Slow Harbor,2,295,0
+T0285,R046,A11,Velvet Engine,1,372,1
+T0286,R046,A11,Burning Lantern,2,438,0
+T0287,R046,A11,Faded Signal,3,450,0
+T0288,R046,A11,Burning Harbor,4,393,0

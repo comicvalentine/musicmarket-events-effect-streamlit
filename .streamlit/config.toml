@@ -1,0 +1,21 @@
+[theme]
+base = "light"
+primaryColor = "#6250d6"
+backgroundColor = "#fcfcfb"
+secondaryBackgroundColor = "#f2f1ec"
+textColor = "#0b0b0b"
+font = "sans-serif"
+borderColor = "#e1e0d9"
+showWidgetBorder = true
+
+# 2개 코호트 비교(축 1/2/3)에 쓰는 카테고리 팔레트. CVD 안전성 검증됨(dataviz 스킬 validate_palette.js).
+chartCategoricalColors = [
+    "#2a78d6",
+    "#eb6834",
+    "#1baf7a",
+    "#eda100",
+    "#e87ba4",
+    "#008300",
+    "#6250d6",
+    "#e34948",
+]

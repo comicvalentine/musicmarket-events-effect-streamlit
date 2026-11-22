@@ -1,0 +1,47 @@
+release_id,artist_id,title,release_type,release_date
+R001,A01,Paper Static Part II,정규,2023-12-13
+R002,A01,Distant Avenue,EP,2024-05-04
+R003,A01,Faded Motel Part II,정규,2025-03-22
+R004,A01,Electric Garden,싱글,2026-04-20
+R005,A02,Slow Room,정규,2022-10-21
+R006,A02,Glass Harbor Reprise,싱글,2024-10-16
+R007,A02,Glass Letter Reprise,정규,2026-09-28
+R008,A02,Faded Garden,EP,2026-05-16
+R009,A03,Burning Summer,정규,2022-11-30
+R010,A03,Lunar Engine,EP,2024-01-29
+R011,A03,Quiet Island Part II,EP,2026-01-18
+R012,A03,Golden Ferry (Interlude),정규,2025-03-11
+R013,A04,Silver Motel Reprise,정규,2023-07-30
+R014,A04,Amber Orbit Part II,EP,2024-09-26
+R015,A04,Paper Avenue (Interlude),정규,2025-08-03
+R016,A04,Glass Engine,싱글,2025-04-21
+R017,A05,Distant Garden (Interlude),정규,2022-10-11
+R018,A05,Distant Harbor,EP,2024-05-13
+R019,A05,Paper Tide (Live),싱글,2026-01-29
+R020,A05,Distant Lantern,EP,2025-09-06
+R021,A05,Static Orbit (Live),정규,2025-05-26
+R022,A06,Winter Engine (Live),정규,2023-03-21
+R023,A06,Lunar Signal,EP,2024-10-20
+R024,A06,Silver Orbit,싱글,2026-08-02
+R025,A06,Silver Motel (Live),EP,2025-06-07
+R026,A07,Hollow Signal,정규,2022-05-14
+R027,A07,Faded Avenue,EP,2024-01-23
+R028,A07,Distant Window (Interlude),싱글,2025-05-31
+R029,A07,Amber Comet,싱글,2026-06-03
+R030,A08,Golden Weather,정규,2023-03-01
+R031,A08,Burning Ferry Part II,EP,2024-07-15
+R032,A08,Quiet Lantern (Live),EP,2025-08-16
+R033,A08,Slow Comet,싱글,2025-03-20
+R034,A09,Lunar Orbit,정규,2023-11-23
+R035,A09,Golden Letter (Live),싱글,2024-03-08
+R036,A09,Amber Room,EP,2026-03-05
+R037,A09,Neon Harbor,EP,2025-10-07
+R038,A10,Static Summer,정규,2022-10-05
+R039,A10,Silver Garden (Live),싱글,2024-06-06
+R040,A10,Amber Tide Part II,싱글,2026-03-02
+R041,A10,Static Static,정규,2025-04-21
+R042,A11,Golden Engine,정규,2022-09-17
+R043,A11,Lunar Room,싱글,2024-04-30
+R044,A11,Amber Static,싱글,2025-08-27
+R045,A11,Amber Avenue,싱글,2026-08-28
+R046,A11,Static Avenue,EP,2026-03-19
