@@ -1,0 +1,13 @@
+name: Streamlit Health Check
+on:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Health check on Streamlit app
+        run: |
+          curl -s -m 10 https://musicmarket-events-effect-app-zmlgtgthr56dez3rsn2e4n.streamlit.app/ > /dev/null
+          echo "✅ Health check passed"

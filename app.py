@@ -51,7 +51,12 @@ SELECT r.release_id AS id, r.artist_id, a.artist_name, r.release_date AS date,
 FROM dim_release r JOIN dim_artist a ON a.artist_id = r.artist_id
 WHERE r.release_date >= (SELECT MIN(date) FROM fact_spotify_artist_daily)
 """
-events = pd.concat([run(MARKETING_SQL), run(RELEASE_SQL)], ignore_index=True).sort_values("date")
+
+try:
+    events = pd.concat([run(MARKETING_SQL), run(RELEASE_SQL)], ignore_index=True).sort_values("date")
+except Exception as e:
+    st.error(f"⚠️ 데이터 로드 실패: {e}")
+    st.stop()
 
 st.title("이벤트 효과 대시보드")
 st.caption("합성 데이터(가상 아티스트 11명). 실제 아티스트·수치와 무관합니다.")
