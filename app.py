@@ -87,6 +87,9 @@ st.subheader(f"{ev['artist_name']} · {ev['name']} ({ev['kind']}) · {event_date
 
 platform = st.sidebar.radio("플랫폼", ["Spotify", "Apple Music"])
 
+view_mode = st.sidebar.radio("표시 방식", ["지수 (이벤트 전 평균=100)", "원본값"])
+mode = "index" if view_mode.startswith("지수") else "raw"
+
 st.sidebar.markdown("**카드 윈도우 (이벤트 후 며칠)**")
 wcol1, wcol2, wcol3 = st.sidebar.columns(3)
 w1 = wcol1.number_input("윈도우 1", min_value=1, max_value=180, value=7, label_visibility="collapsed")
@@ -173,10 +176,22 @@ def to_index_long(df: pd.DataFrame, series_col: str, value_col: str) -> pd.DataF
     return _index_by_series(long_df)
 
 
-def summary_cards(idx_df: pd.DataFrame, domain: list[str] | None = None) -> None:
+def _fmt_raw(x: float) -> str:
+    """원본값 포맷: 10 이상이면 정수(카운트성), 그보다 작으면 소수 2자리(SPL 같은 비율성)."""
+    return f"{x:,.0f}" if abs(x) >= 10 else f"{x:,.2f}"
+
+
+def _fmt_raw_delta(x: float) -> str:
+    """원본값 기준 차이(부호 포함) 포맷. 절댓값 크기에 따라 _fmt_raw와 같은 자릿수 규칙을 쓴다."""
+    sign = "+" if x >= 0 else "-"
+    return f"{sign}{_fmt_raw(abs(x))}"
+
+
+def summary_cards(idx_df: pd.DataFrame, domain: list[str] | None = None, mode: str = "index") -> None:
     """Mixpanel 식 요약 카드: series마다 큰 숫자(최근값) + 스파크라인 + 7/14/28일 후 변화율.
-    idx_df는 line_chart에 넣는 것과 같은 long-format(day_offset, series, value, index_100).
-    domain을 주면 그 순서대로 카드를 배열해 line_chart의 범례 순서와 맞춘다."""
+    idx_df는 line_chart에 넣는 것과 같은 long-format(day_offset, series, value, index_100, baseline).
+    domain을 주면 그 순서대로 카드를 배열해 line_chart의 범례 순서와 맞춘다.
+    mode="index"면 지수(28일 전 평균=100) + % 변화, "raw"면 원본값 + 원본 차이를 보여준다."""
     series_list = idx_df["series"].dropna().unique().tolist()
     if domain:
         series_list = [s for s in domain if s in series_list] + [s for s in series_list if s not in domain]
@@ -186,11 +201,12 @@ def summary_cards(idx_df: pd.DataFrame, domain: list[str] | None = None) -> None
         with col:
             latest = d.iloc[-1]
             st.markdown(f"**{s}**")
-            st.markdown(f"### {latest['value']:,.0f}")
+            st.markdown(f"### {_fmt_raw(latest['value'])}")
+            y_field = "index_100:Q" if mode == "index" else "value:Q"
             spark = (
                 alt.Chart(d)
                 .mark_line(color="#6250d6")
-                .encode(x=alt.X("day_offset:Q", axis=None), y=alt.Y("index_100:Q", axis=None, scale=alt.Scale(zero=False)))
+                .encode(x=alt.X("day_offset:Q", axis=None), y=alt.Y(y_field, axis=None, scale=alt.Scale(zero=False)))
                 .properties(height=50)
             )
             st.altair_chart(spark, use_container_width=True)
@@ -199,9 +215,12 @@ def summary_cards(idx_df: pd.DataFrame, domain: list[str] | None = None) -> None
                 row = d.loc[d["day_offset"] == w]
                 if row.empty:
                     wcol.metric(f"{w}일 후", "–")
-                else:
+                elif mode == "index":
                     idx_val = row.iloc[0]["index_100"]
                     wcol.metric(f"{w}일 후", f"{idx_val:.0f}", delta=f"{idx_val - 100:+.1f}%")
+                else:
+                    raw_val, baseline = row.iloc[0]["value"], row.iloc[0]["baseline"]
+                    wcol.metric(f"{w}일 후", _fmt_raw(raw_val), delta=_fmt_raw_delta(raw_val - baseline))
 
 
 # 두 코호트 비교에 쓰는 고정 2색(파랑/주황) — CVD 안전성 검증됨(dataviz 스킬). domain 순서로
@@ -209,20 +228,25 @@ def summary_cards(idx_df: pd.DataFrame, domain: list[str] | None = None) -> None
 COHORT_COLORS = ["#2a78d6", "#eb6834"]
 
 
-def line_chart(df: pd.DataFrame, color_field: str, title: str, domain: list[str] | None = None) -> alt.Chart:
+def line_chart(df: pd.DataFrame, color_field: str, title: str, domain: list[str] | None = None,
+               mode: str = "index") -> alt.Chart:
     color = alt.Color(f"{color_field}:N", title=None,
                        scale=alt.Scale(domain=domain, range=COHORT_COLORS) if domain else alt.Undefined)
+    if mode == "index":
+        y_field, y_title, tooltip_fmt, full_title = "index_100:Q", "지수 (이벤트 전 28일 평균 = 100)", ".1f", f"{title} 지수"
+    else:
+        y_field, y_title, tooltip_fmt, full_title = "value:Q", title, ",.2f", f"{title} (원본값)"
     rule = alt.Chart(pd.DataFrame({"x": [0]})).mark_rule(color="#999", strokeDash=[4, 4]).encode(x="x:Q")
     line = (
         alt.Chart(df)
         .mark_line(point=True)
         .encode(
             x=alt.X("day_offset:Q", title="이벤트 기준 날짜 (0 = 이벤트 당일)"),
-            y=alt.Y("index_100:Q", title="지수 (이벤트 전 28일 평균 = 100)", scale=alt.Scale(zero=False)),
+            y=alt.Y(y_field, title=y_title, scale=alt.Scale(zero=False)),
             color=color,
-            tooltip=["day_offset", color_field, alt.Tooltip("index_100:Q", format=".1f")],
+            tooltip=["day_offset", color_field, alt.Tooltip(y_field, format=tooltip_fmt)],
         )
-        .properties(title=title, height=320)
+        .properties(title=full_title, height=320)
     )
     return (line + rule).interactive()
 
@@ -254,12 +278,12 @@ if platform == "Spotify":
 
     idx1a = to_index_wide(df1, ["active_listeners", "programmed_listeners"])
     idx1a["series"] = idx1a["series"].map({"active_listeners": "Active", "programmed_listeners": "Programmed"})
-    summary_cards(idx1a, domain=COHORT_DOMAIN_1)
-    st.altair_chart(line_chart(idx1a, "series", "청취자 지수", domain=COHORT_DOMAIN_1), use_container_width=True)
+    summary_cards(idx1a, domain=COHORT_DOMAIN_1, mode=mode)
+    st.altair_chart(line_chart(idx1a, "series", "청취자", domain=COHORT_DOMAIN_1, mode=mode), use_container_width=True)
 
     idx1b = to_index_wide(df1, ["active_spl", "programmed_spl"])
     idx1b["series"] = idx1b["series"].map({"active_spl": "Active", "programmed_spl": "Programmed"})
-    st.altair_chart(line_chart(idx1b, "series", "청취자 당 스트림(관여도) 지수", domain=COHORT_DOMAIN_1),
+    st.altair_chart(line_chart(idx1b, "series", "청취자 당 스트림(관여도)", domain=COHORT_DOMAIN_1, mode=mode),
                      use_container_width=True)
 
 
@@ -298,11 +322,11 @@ ORDER BY country, date
     country_domain = [f"대상국 {target_country}", "비교군"]
 
     idx2a = to_index_long(grp2, "group", "listeners")
-    summary_cards(idx2a, domain=country_domain)
-    st.altair_chart(line_chart(idx2a, "series", "청취자 지수", domain=country_domain), use_container_width=True)
+    summary_cards(idx2a, domain=country_domain, mode=mode)
+    st.altair_chart(line_chart(idx2a, "series", "청취자", domain=country_domain, mode=mode), use_container_width=True)
 
     idx2b = to_index_long(grp2, "group", "spl")
-    st.altair_chart(line_chart(idx2b, "series", "청취자 당 스트림(관여도) 지수", domain=country_domain),
+    st.altair_chart(line_chart(idx2b, "series", "청취자 당 스트림(관여도)", domain=country_domain, mode=mode),
                      use_container_width=True)
 
 
@@ -366,18 +390,18 @@ else:
         df3["spl"] = df3["streams"] / df3["listeners"]
 
         idx3a = to_index_long(df3, "cohort", "listeners")
-        summary_cards(idx3a, domain=COHORT_DOMAIN_3)
-        st.altair_chart(line_chart(idx3a, "series", "청취자(근사) 지수", domain=COHORT_DOMAIN_3),
+        summary_cards(idx3a, domain=COHORT_DOMAIN_3, mode=mode)
+        st.altair_chart(line_chart(idx3a, "series", "청취자(근사)", domain=COHORT_DOMAIN_3, mode=mode),
                          use_container_width=True)
 
         idx3b = to_index_long(df3, "cohort", "spl")
-        st.altair_chart(line_chart(idx3b, "series", "청취자 당 스트림(관여도) 지수", domain=COHORT_DOMAIN_3),
+        st.altair_chart(line_chart(idx3b, "series", "청취자 당 스트림(관여도)", domain=COHORT_DOMAIN_3, mode=mode),
                          use_container_width=True)
     else:
         df3 = run(SQL_APPLE_COHORT, dict(event_date=event_date, artist_id=artist_id,
                                           target_country=target_country, lo=PLOT_WINDOW[0], hi=PLOT_WINDOW[1]))
         idx3 = to_index_long(df3, "cohort", "plays")
-        summary_cards(idx3, domain=COHORT_DOMAIN_3)
-        st.altair_chart(line_chart(idx3, "series", "신곡 vs 기존곡 재생 지수", domain=COHORT_DOMAIN_3),
+        summary_cards(idx3, domain=COHORT_DOMAIN_3, mode=mode)
+        st.altair_chart(line_chart(idx3, "series", "신곡 vs 기존곡 재생", domain=COHORT_DOMAIN_3, mode=mode),
                          use_container_width=True)
 
